@@ -11,7 +11,6 @@ async def test_auth_flow(client: AsyncClient):
         "email": unique_email,
         "password": "strongpassword123"
     }
-    
     response = await client.post("/auth/register", json=register_payload)
     assert response.status_code == 200
     res_data = response.json()
